@@ -1,0 +1,178 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:layoutDirection="rtl"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+    <View
+        android:id="@+id/vTopStripe"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="40dp"
+        android:background="#0038B8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivFlag"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/israel_flag"
+        android:background="#DDDDDD"
+        android:padding="1dp"
+        android:contentDescription="דגל ישראל"
+        app:layout_constraintTop_toBottomOf="@id/vTopStripe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="להיות ישראלי"
+        android:textColor="#0038B8"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/ivFlag"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="מה זה אומר בשבילי"
+        android:textColor="#666666"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvBody"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:lineSpacingExtra="4dp"
+        android:text="להיות ישראלי זה לדעת שאתה אף פעם לא לבד. זה עם שמתווכח על הכל, אבל ברגע האמת עומד כתף אל כתף. זה לקום אחרי כל נפילה, להמשיך לבנות, לצחוק ולחיות."
+        android:textColor="#222222"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintEnd_toEndOf="@id/glEnd" />
+
+    <TextView
+        android:id="@+id/tvChip1"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="6dp"
+        android:background="#E6EEFF"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="🤝\nערבות\nהדדית"
+        android:textColor="#0038B8"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvBody"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintEnd_toStartOf="@id/tvChip2"
+        app:layout_constraintHorizontal_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/tvChip2"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:background="#E6EEFF"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="💪\nחוסן"
+        android:textColor="#0038B8"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/tvChip1"
+        app:layout_constraintStart_toEndOf="@id/tvChip1"
+        app:layout_constraintEnd_toStartOf="@id/tvChip3" />
+
+    <TextView
+        android:id="@+id/tvChip3"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="6dp"
+        android:background="#E6EEFF"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="❤️\nמשפחה\nוחברים"
+        android:textColor="#0038B8"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/tvChip1"
+        app:layout_constraintStart_toEndOf="@id/tvChip2"
+        app:layout_constraintEnd_toEndOf="@id/glEnd" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierChips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tvChip1,tvChip2,tvChip3" />
+
+    <TextView
+        android:id="@+id/tvQuote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="עם ישראל חי"
+        android:textColor="#0038B8"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/barrierChips"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <Button
+        android:id="@+id/btnProud"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#0038B8"
+        android:text="גאה להיות ישראלי 💙"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvQuote"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintEnd_toEndOf="@id/glEnd" />
+
+    <View
+        android:id="@+id/vBottomStripe"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_marginBottom="48dp"
+        android:background="#0038B8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
